@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="favicon" sizes="32x32" href="./images/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="container--img">
+        <div class="container--img-card">
+          <img src="./images/bg-card-front.png" alt="card_front">
+          <div class="container--img-card_content">
+            <img src="./images/card-logo.svg" alt="card_logo">
+            <div class="container--img-card_details">
+              <h4 id="cardNo">0000 0000 0000 0000</h4>
+              <div class="container--img-card_name">
+                <h6 id="cardName">John Doe</h6>
+                <h6><span id="month">00</span>/<span id="year">00</span></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container--img-card back">
+          <img src="./images/bg-card-back.png" alt="card_front">
+          <div class="container--img-card_content">
+            <h6 id="cvcNo">000</h6>
+          </div>
+        </div>
+      </div>
+      <form action="" method="post" class="container--form">
+        <div class="container--form-input_group">
+          <label for="name">Cardholder Name</label>
+          <div class="input-wrapper">
+            <input type="text" name="name" id="name" placeholder="e.g. John Doe">
+          </div>
+          <div class="container--form-input_error" data-error="name">Can't be blank</div>
+        </div>
+        <div class="container--form-input_group">
+          <label for="number">Cardholder Number</label>
+          <div class="input-wrapper">
+            <input type="text" name="number" id="number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" maxlength="16" placeholder ="e.g. 1234 5678 9123 0000">
+          </div>
+          <div class="container--form-input_error" data-invalid="Wrong format, length is too short" data-empty="Can't be blank" data-error="number">None</div>
+        </div>
+        <div class="container--form-input_group-container">
+          <div class="container--form-input_group expiry">
+            <label for="mm">Exp. Date(MM/YY)</label>
+            <div class="container--form-input_group">
+              <div class="input-wrapper">
+                <input type="text" name="mm" id="mm" maxlength="2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="MM">
+              </div>
+            </div>
+            <div class="container--form-input_group">
+              <div class="input-wrapper">
+                <input type="text" name="yy" id="yy" maxlength="2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="YY">
+              </div>
+            </div>
+            <div class="container--form-input_error" data-empty="MM/YY Can't be blank" data-invalid="Wrong format" data-error="mm">None</div>
+          </div>
+          <div class="container--form-input_group cvc">
+            <label for="cvc">CVC</label>
+            <div class="input-wrapper"> 
+              <input type="text" name="cvc" id="cvc" maxlength="3" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" placeholder="e.g. 123">
+            </div>
+            <div class="container--form-input_error" data-empty="Can't be blank" data-invalid="Wrong format" data-error="cvc">None</div>
+          </div>
+        </div>
+        <button class="submit_btn" type="submit">Confirm</button>
+      </form>
+      <div class="container--success">
+        <img src="./images/icon-complete.svg" alt="success">
+        <h4>Thank You!</h4>
+        <h6>We've added your card details</h6>
+        <button id="continue">Continue</button>
+      </div>
+    </main>
+    <div class="attribution">
+      <img id="attribution-click" src="./images/avatar.jpeg" alt="avatar">
+      <div class="attribution--content">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/innocentcoder06">Nanthagopal S</a>.
+      </div>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
