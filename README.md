@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://your-solution-url.com)
-- Live Site URL: [Netlify](https://your-live-site-url.com)
+- Solution URL: [GitHub](https://github.com/innocentcoder06/interactive-card-details-form-main)
+- Live Site URL: [Netlify](https://nanthagopal-s-interactive-card-form.netlify.app/)
 
 ## My process
 
